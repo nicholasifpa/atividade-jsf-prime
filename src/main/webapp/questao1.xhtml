@@ -18,12 +18,8 @@
 				<h:outputText for="usuario" value="Usuário: *" />
 				<p:inputText id="usuario" label="Usuario" value="#{usuarioBean.usuario.usuario}"
 					size="50" maxlength="50" required="true" />
-					
-				<h:outputText for="nome" value="Nome: *" />
-				<p:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.nome}"
-					size="50" maxlength="50" required="true" />
-					
-					<h:outputText for="senha" value="Senha: *" />
+			
+				<h:outputText for="senha" value="Senha: *" />
 				<p:password id = "senha" value="#{usuarioBean.usuario.senha}" required="true" feedback="true|false" />
 			</p:panelGrid>
 
