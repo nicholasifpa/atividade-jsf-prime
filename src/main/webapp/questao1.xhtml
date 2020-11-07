@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Cadastro de Usuário</title>
+</h:head>
+<h:body>
+	<h:form id="formulario">
+		<p:panel id = "cadastro" header="Cadastro de Usuário">
+			<p:panelGrid columns="2" cellpadding="5">
+				<h:outputText for="nome" value="Nome: *" />
+				<p:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.nome}"
+					size="50" maxlength="50" required="true" />
+					
+				<h:outputText for="usuario" value="Usuário: *" />
+				<p:inputText id="usuario" label="Usuario" value="#{usuarioBean.usuario.usuario}"
+					size="50" maxlength="50" required="true" />
+					
+				<h:outputText for="nome" value="Nome: *" />
+				<p:inputText id="nome" label="Nome" value="#{usuarioBean.usuario.nome}"
+					size="50" maxlength="50" required="true" />
+					
+					<h:outputText for="senha" value="Senha: *" />
+				<p:password id = "senha" value="#{usuarioBean.usuario.senha}" required="true" feedback="true|false" />
+			</p:panelGrid>
+
+			<p:commandButton id="cadastrar" value="Cadastrar" update="listUsuarios"
+				action="#{usuarioBean.addUsuario}" />
+			<p:commandButton id="limpar" value="Limpar" update="cadastro" process="@this" >
+    			<p:resetInput target="cadastro" />
+   			</p:commandButton>
+		</p:panel>
+
+	</h:form>
+
+
+	<h2>Lista de Usuários</h2>
+	<p:dataTable id="listUsuarios" value="#{usuarioBean.listUsuarios}" var="c">
+		<p:column headerText="Nome do Usuário">
+			<h:outputText value="#{c.nome}" />
+		</p:column>
+		<p:column headerText="Usuário">
+			<h:outputText value="#{c.usuario}" />
+		</p:column>
+	</p:dataTable>
+</h:body>
+</html>

@@ -17,7 +17,7 @@ public class LoginBean {
 			FacesContext.getCurrentInstance().getExternalContext()
 			       .getSessionMap().put("USUARIO", nome.toUpperCase());
 			// redireciona para a página "home"
-			return "home.xhtml";
+			return "questao2.xhtml";
 		}
 	    FacesMessage fm = new FacesMessage("Erro! Verifique seu acesso.");
 	    FacesContext.getCurrentInstance().addMessage("msg", fm);
